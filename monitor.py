@@ -109,7 +109,8 @@ class AnticheatTable():
 			self.n_eating.value += 1 # como
 			self.n_thinking.value -= 1 # dejo de pensar
 		else: # me pongo a la cola de hambrientos
-			self.chungry.wait_for(self.change_hungry)
+			#self.chungry.wait_for(self.change_hungry)
+			self.hungry[self.current_phil] = True
 			self.chungry.notify_all()
 		self.mutex.release()
         	
